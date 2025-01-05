@@ -1,0 +1,45 @@
+.tetrahedron-container {
+    perspective: 1000px; /* Perspective for 3D effect */
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto; /* Center the tetrahedron on the screen */
+  }
+  
+  .tetrahedron {
+    position: relative;
+    width: 0; /* No width, only triangles */
+    height: 0; /* No height, only triangles */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+  }
+  
+  /* Each face of the tetrahedron */
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: transparent; /* Transparent background */
+    border: 2px solid; /* Outline edges */
+    border-image-source: linear-gradient(90deg, #e74c3c, #3498db); /* Gradient border */
+    border-image-slice: 1; /* Ensure gradient is applied */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  }
+  
+  /* Position each face of the tetrahedron */
+  .face-1 {
+    transform: rotateY(0deg) translateZ(115px); /* Front face */
+  }
+  
+  .face-2 {
+    transform: rotateY(120deg) translateZ(115px); /* Right face */
+  }
+  
+  .face-3 {
+    transform: rotateY(-120deg) translateZ(115px); /* Left face */
+  }
+  
+  .face-4 {
+    transform: rotateX(60deg) rotateZ(45deg) translateZ(115px); /* Bottom face */
+  }
